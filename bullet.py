@@ -22,11 +22,4 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.center = (self.x, self.y)
 
     def draw(self, screen):
-        # rotate and scale the bullet
-        rot_bullet = pygame.transform.rotozoom(
-            self.image, self.theta, self.zoom)
-        # Get the rectangle of the rotated bullet
-        rot_bullet_rect = rot_bullet.get_rect()
-        rot_bullet_rect.center = self.rect.center
-        # Draw the rotated bullet
-        screen.blit(rot_bullet, rot_bullet_rect)
+        screen.blit(self.image, self.rect)
