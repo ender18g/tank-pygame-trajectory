@@ -1,7 +1,6 @@
 import pygame
 from bullet import Bullet
 
-
 class Tank(pygame.sprite.Sprite):
     def __init__(self, x, y, bullets, screen):
         super().__init__()

@@ -5,23 +5,21 @@ from tank import Tank
 WIDTH = 1024 * 2
 HEIGHT = 1024
 
-
 # create clock
 clock = pygame.time.Clock()
 
 # Create the game window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
+# make background
 bg_tile = pygame.image.load('assets/backgroundColorDesert.png')
 background = pygame.Surface(screen.get_size())
 for i in range(0, WIDTH, bg_tile.get_width()):
     for j in range(0, HEIGHT, bg_tile.get_height()):
         background.blit(bg_tile, (i, j))
 
-
 # make bullet group
 bullets = pygame.sprite.Group()
-
 
 # Create a tank at center of the screen
 my_tank = Tank(WIDTH//2, HEIGHT - 100, bullets, screen)
