@@ -2,7 +2,7 @@ import pygame
 from math import sin, cos, atan2, pi, atan
 
 class Bullet(pygame.sprite.Sprite):
-    def __init__(self, x, y, theta, screen):
+    def __init__(self, x, y, theta, speed, screen):
         super().__init__()
         self.image = pygame.image.load('assets/tank_bullet3.png')
         self.rect = self.image.get_rect()
@@ -11,7 +11,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.center = (x, y)
         self.theta = theta # theta in deg
         self.zoom = 1
-        self.speed = 8
+        self.speed = speed
         self.screen = screen
 
         # init values for trajectory

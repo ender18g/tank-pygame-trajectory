@@ -2,7 +2,7 @@ import pygame
 from bullet import Bullet
 
 class Tank(pygame.sprite.Sprite):
-    def __init__(self, x, y, bullets, screen):
+    def __init__(self, x, y, bullets, bullet_speed, screen):
         super().__init__()
         self.image = pygame.image.load('assets/tanks_tankNavy2.png')
         self.rect = self.image.get_rect()
@@ -12,6 +12,7 @@ class Tank(pygame.sprite.Sprite):
         self.zoom = 0.4
         self.bullets = bullets
         self.last_fire = 0
+        self.bullet_speed = bullet_speed
         self.screen = screen
 
     def update(self):
@@ -38,7 +39,7 @@ class Tank(pygame.sprite.Sprite):
             print('BOOOOMMM!!!')
             # create a bullet
             bullet = Bullet(self.rect.centerx, self.rect.centery,
-                            self.theta, self.screen)
+                            self.theta, self.bullet_speed[0], self.screen)
             # add the bullet to the bullets group
             self.bullets.add(bullet)
 
